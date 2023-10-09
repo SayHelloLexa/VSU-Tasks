@@ -6,34 +6,33 @@ public class Task4 {
         System.out.print("Введите число: ");
         int n = scanner.nextInt();
         int num = 0; // проверяемое число
-        int count = 0; // счетчик чисел
-        while (count < n) {
-            if (check(num)) {
-                count++;
+        //int count = 0; // счетчик чисел
+        for(int count = 0; count < n;){
+            if (check(num)){
+                count ++;
             }
-            num++;
+            num ++;
         }
         System.out.println(n + " " + (num - 1));
     }
 
 
     public static boolean check(long num) { // метод, в котором проверяется четность и нечетность цифр числа N
-        long b;
-        boolean tf = false; // переменная, которая будет говорить о том, что подходит ли число N под условие
+        long remains;
+        boolean trueOrFalse = false;
         while (true) {
-            b = num % 10; // справа налево каждая цифра числа
-            if (b == 0) {
+            remains = num % 10; // справа налево каждая цифра числа
+            if (num == 0) {
                 break;
             }
-            if (b % 2 == 0) {
-                tf = false;
-            } else if (b % 2 != 0) {
-                tf = true;
+            if (remains % 2 == 0) {
+                trueOrFalse = false;
+            } else if (remains % 2 != 0) {
+                trueOrFalse = true;
             }
             num = num / 10;
-
         }
-        return tf;
+        return trueOrFalse;
     }
 
 }
