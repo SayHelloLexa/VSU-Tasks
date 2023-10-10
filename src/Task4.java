@@ -6,17 +6,28 @@ public class Task4 {
         System.out.print("Введите число: ");
         int n = scanner.nextInt();
         int num = 0; // проверяемое число
-        //int count = 0; // счетчик чисел
-        for(int count = 0; count < n;){
-            if (check(num)){
-                count ++;
+        for (int count = 0; count < n; ) {
+            if (check(num)) {
+                count++;
             }
-            num ++;
+            num++;
         }
         System.out.println(n + " " + (num - 1));
     }
 
+    public static boolean check(long num) {
+        while (num > 0) {
+            long remains = num % 10;
+            if (remains % 2 == 0) {
+                return false;
+            }
+            num = num / 10;
+        }
+        return true;
+    }
+}
 
+    /*
     public static boolean check(long num) { // метод, в котором проверяется четность и нечетность цифр числа N
         long remains;
         boolean trueOrFalse = false;
@@ -35,5 +46,7 @@ public class Task4 {
         return trueOrFalse;
     }
 
-}
+     */
+
+
 
