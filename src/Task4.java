@@ -5,14 +5,16 @@ public class Task4 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите число: ");
         int n = scanner.nextInt();
-        int num = 0; // проверяемое число
-        for (int count = 0; count < n; ) {
+        int num = 1; // проверяемое число
+
+        for (int count = 0; count < n;) {
             if (check(num)) {
                 count++;
             }
             num++;
         }
-        System.out.println(n + " " + (num - 1));
+
+            System.out.println(n + " " + (num - 1));
     }
 
     public static boolean check(long num) {
@@ -26,6 +28,9 @@ public class Task4 {
         return true;
     }
 }
+
+
+
 
     /*
     public static boolean check(long num) { // метод, в котором проверяется четность и нечетность цифр числа N
