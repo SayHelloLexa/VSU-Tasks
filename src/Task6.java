@@ -15,31 +15,31 @@ public class Task6 {
         for (int i = 0; i < n; i++) {
             sum += a;
             a *= -(x * x) / ((2 * i + 2) * (2 * i + 3));
-        }
 
-        // Вывод суммы n слагаемых
-        System.out.println("Сумма " + n + " слагаемых: " + sum);
+            // Вывод суммы n слагаемых
+            System.out.println("Сумма " + n + " слагаемых: " + sum);
 
-        double sumGreaterE = 0.0; // Вычисление суммы слагаемых, по модулю больших, чем e
-        a = 1.0;
-        while (Math.abs(a) > e) {
-            sumGreaterE += a;
-            a *= -(x * x) / ((2 * n + 2) * (2 * n + 3));
-            n++;
-        }
-        System.out.println("Сумма слагаемых, модуль которых больше " + e + ": " + sumGreaterE);
-        double sumGreaterEOver10 = 0.0;
-        a = 1.0;
-        n = 0;
+            double sumGreaterE = 0.0; // Вычисление суммы слагаемых, по модулю больших, чем e
+            a = 1.0;
+            if (Math.abs(a) > e) {
+                sumGreaterE += a;
+                a *= -(x * x) / ((2 * n + 2) * (2 * n + 3));
+                n++;
+            }
+            System.out.println("Сумма слагаемых, модуль которых больше " + e + ": " + sumGreaterE);
+            double sumGreaterEOver10 = 0.0;
+            a = 1.0;
+            n = 0;
 
-        while (Math.abs(a) > e / 10) {
-            sumGreaterEOver10 += a;
-            a *= -(x * x) / ((2 * n + 2) * (2 * n + 3));
-            n++;
+            if (Math.abs(a) > e / 10) {
+                sumGreaterEOver10 += a;
+                a *= -(x * x) / ((2 * n + 2) * (2 * n + 3));
+                n++;
+            }
+            System.out.println("Сумма слагаемых, модуль которых больше " + e / 10 + ": " + sumGreaterEOver10);
+            double mathValue = Math.sin(x) / x;
+            System.out.println("Значение функции с помощью Math: " + mathValue);
         }
-        System.out.println("Сумма слагаемых, модуль которых больше " + e / 10 + ": " + sumGreaterEOver10);
-        double mathValue = Math.sin(x) / x;
-        System.out.println("Значение функции с помощью Math: " + mathValue);
     }
 }
 
