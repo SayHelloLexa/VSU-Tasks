@@ -40,23 +40,25 @@ public class Program {
     // P2 -
     // R - прямоугольник
     public static SimpleColor getColor(double x, double y) {
-        if (P2.isPointLeftOfParabola2(x,y)){
+        if (P2.isPointLeftOfParabola2(x, y)) {
             return SimpleColor.GREEN;
         }
-        if (R.isPointInsideRectangle(x,y)){
+        if (R.isPointInsideRectangle(x, y)) {
             return SimpleColor.GRAY;
         }
-        if (L.isPointBelowLine(x,y) && y > 0){
+        if (L.isPointBelowLine(x, y) && y > 0) {
             return SimpleColor.YELLOW;
         }
-        if (P1.isPointRightOfParabola1(x,y)){
+        if (P1.isPointRightOfParabola1(x, y)) {
             return SimpleColor.WHITE;
         }
-        if (P3.isPointDownOfParabola(x,y) && L.isPointBelowLine(x,y)){
+        if (P3.isPointDownOfParabola(x, y) && L.isPointBelowLine(x, y)) {
             return SimpleColor.GREEN;
         }
-
-        return SimpleColor.BLUE;
+        if (!P1.isPointRightOfParabola1(x,y) && !P3.isPointDownOfParabola(x,y)){
+            return SimpleColor.GREEN;
+        }
+        return SimpleColor.GRAY;
     }
 }
 
@@ -67,6 +69,31 @@ public class Program {
 
 
 
+/*
+
+if (P2.isPointLeftOfParabola2(x,y)){
+        return SimpleColor.GREEN;
+        }
+        if (R.isPointInsideRectangle(x,y)){
+        return SimpleColor.GRAY;
+        }
+        if (L.isPointBelowLine(x,y) && y > 0){
+        return SimpleColor.YELLOW;
+        }
+        if (P1.isPointRightOfParabola1(x,y) || P1.isPointRightOfParabola1(x,y) && P3.isPointDownOfParabola(x,y)){
+        return SimpleColor.WHITE;
+        }
+        /*
+        if (P3.isPointDownOfParabola(x,y) && L.isPointBelowLine(x,y)){
+            return SimpleColor.GREEN;
+        }
+
+
+        if (P3.isPointDownOfParabola(x,y) && !P1.isPointRightOfParabola1(x,y) && y < L.isPointAboveLine(x,y)){
+        return SimpleColor.GREEN;
+        }
+
+ */
 
 
 

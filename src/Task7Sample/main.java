@@ -1,46 +1,45 @@
-import java.util.Locale;
+package Task7Sample;
+
 import java.util.Scanner;
+import java.util.Locale;
 
-
-
-public class Task6 {
+public class main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ROOT);
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Введите x: ");
-        double x = scanner.nextDouble();
         System.out.print("Введите n: ");
         int n = scanner.nextInt();
+        System.out.print("Введите x: ");
+        double x = scanner.nextDouble();
         System.out.print("Введите e: ");
         double e = scanner.nextDouble();
 
-        calculateAndPrint(n, x, e);
+        function(n, x, e);
     }
 
-    public static void calculateAndPrint(int n, double x, double e) {
+    public static void function(int n, double x, double e) {
         double sum1 = 0;
         double sum2 = 0;
         double sum3 = 0;
-
         double func = Math.sin(x) / x;
-        double an = 1;
+        double member = 1;
         double factorial = 1;
 
-        for (int i = 0; Math.abs(an) > e / 10 || i < n || Math.abs(an) > e; i++){
-            an = Math.pow(-1, i) * Math.pow(x * x, i) / factorial;
+        for (int i = 0; Math.abs(member) > e / 10 || i < n || Math.abs(member) > e; i++){
+            member = Math.pow(-1, i) * Math.pow(x * x, i) / factorial;
             factorial *= 2 * (i + 1) * (2 * (i + 1) + 1);
 
-            if (Math.abs(an) > e) {
-                sum2 += an;
+            if (Math.abs(member) > e) {
+                sum2 += member;
             }
 
-            if (Math.abs(an) > e / 10) {
-                sum3 += an;
+            if (Math.abs(member) > e / 10) {
+                sum3 += member;
             }
 
             if (i < n) {
-                sum1 += an;
+                sum1 += member;
             }
         }
 
@@ -50,15 +49,3 @@ public class Task6 {
         System.out.printf("Значение функции с помощью методов Math: %.08f%n", func);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
