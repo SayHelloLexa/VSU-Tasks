@@ -8,18 +8,9 @@ public class Task7 {
             System.out.println(Arrays.toString(arr));
             System.out.println(indexOfMaxChet(arr) + " " + arr[indexOfMaxChet(arr)]);
             System.out.println(indexOfMaxNechet(arr) + " " + arr[indexOfMaxNechet(arr)]);
-            for (int x = indexOfMaxChet(arr)+1; x < indexOfMaxNechet(arr); x ++){
-                sum += arr[x];
-//            System.out.println(x);
-            }
-            System.out.println(sum);
+            System.out.println(sum(arr));
 
         } else System.out.println("ошибка");
-
-
-
-//        System.out.println(arr[indexOfMaxChet(arr)] + arr[indexOfMaxNechet(arr)]);
-
     }
     public static int indexOfMaxChet(int[] arr) {
         if (arr == null || arr.length == 0)
@@ -61,6 +52,14 @@ public class Task7 {
                 return true;
             }
         return false;
+    }
+    public static int sum(int[] arr){
+        int sum = 0;
+        for (int x = indexOfMaxChet(arr)+1; x < indexOfMaxNechet(arr); x ++){
+            sum += arr[x];
+//            System.out.println(x);
+        }
+        return sum;
     }
 
 }
